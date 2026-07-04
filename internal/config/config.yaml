@@ -6,10 +6,10 @@ server:
   mode: "debug" # debug | release | test
 
 database:
-  host: "127.0.0.1"
+  host: "101.33.206.119"
   port: 5432
   user: "base"
-  password: "password"   # 仅本地开发占位，生产环境由 docker/.env 注入
+  password: "7hXeQp6TjfDRfJdc"   # 仅本地开发占位，生产环境由 docker/.env 注入
   dbname: "base"
   sslmode: "disable"
   timezone: "Asia/Shanghai"
