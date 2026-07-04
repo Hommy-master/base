@@ -10,8 +10,8 @@ RUN go mod download
 
 COPY . .
 
-RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o /app/webserver ./cmd/webserver
-RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o /app/envinit ./cmd/envinit
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o webserver ./cmd/webserver
+RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o envinit ./cmd/envinit
 
 # 运行阶段
 FROM alpine:3.20
@@ -22,7 +22,7 @@ RUN apk add --no-cache ca-certificates tzdata \
 
 WORKDIR /app
 
-COPY --from=builder /app/webserver /app/webserver
+COPY --from=builder /app/webserver /app/envinit ./
 
 EXPOSE 30000
 
