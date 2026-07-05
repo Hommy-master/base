@@ -15,8 +15,8 @@ import (
 	"base/internal/middleware"
 	"base/internal/repository"
 	"base/internal/service"
-	routesv1 "base/routes/v1"
-	routesv2 "base/routes/v2"
+	routesv1 "base/internal/routes/v1"
+	routesv2 "base/internal/routes/v2"
 
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
